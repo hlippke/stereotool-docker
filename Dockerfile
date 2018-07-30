@@ -8,6 +8,8 @@ RUN apt-get update -q
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -yq jackd1 libx11-6 python zenity
 
+COPY stereo_tool_gui_jack_64 /
+COPY start.sh /
 
 CMD ["bash"]
 

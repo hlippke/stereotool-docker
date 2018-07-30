@@ -3,7 +3,7 @@
 ${JACKPORT:=3000}
 
 # Start JACK
-jackd -d net -L $JACKPORT &
+jackd -d net -I0 -O0 -l $JACKPORT &
 
 status=$?
 if [ $status -ne 0 ]; then
