@@ -10,6 +10,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -yq j
 
 COPY stereo_tool_gui_jack_64 /
 COPY start.sh /
+RUN chmod +x /start.sh /stereo_tool_gui_jack_64
 
 CMD ["bash"]
-
