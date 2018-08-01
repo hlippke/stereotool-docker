@@ -11,7 +11,7 @@ if [ $status -ne 0 ]; then
   exit $status
 fi
 
-# wait for JACK to get connect to master
+# wait for JACK to connect to master
 while sleep 1; do
 	SYSTEM_PORTS="$(jack_lsp 2> /dev/null | grep system)"
 
