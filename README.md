@@ -37,3 +37,6 @@ On each instance, change the JACKPORT environment variable to a unique and free 
 
 ## Known issues
 Sometimes the GUI won't show up. Restart the container if this happens.
+
+## TODO
+Limit CAPS and privileges.
