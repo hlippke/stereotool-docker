@@ -20,5 +20,5 @@ $ jack_netsource -H 127.0.0.1 -N Docker1
 ```
 Run the container:
 ```bash
-# docker run -d --network host --privileged=true --cap-add=ALL --ulimit rtprio=99 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --name stereotool stereotool:9.02
+# docker run -d --network host --privileged=true --cap-add=ALL --ulimit rtprio=99 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --name stereotool stereotool
 ```
