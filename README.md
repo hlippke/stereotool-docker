@@ -1,6 +1,8 @@
 # stereotool-docker
 Running Stereotool in a Docker container.
 
+Find the ready-to-run container at https://hub.docker.com/r/hlippke/stereotool/
+
 Stereotool is a shareware broadcast audio processor running on your PC. Visit www.stereotool.com for more information. 
 
 Currently Stereotool in Linux does not allow to run multiple instances simultaneously. You can run more than one instance of the ALSA version, but both will grab its settings from a single stereo_tool.rc file in your home-dir.
