@@ -10,15 +10,24 @@ To solve this, this Docker image can be used to run Steretool on top of Jack1 ru
 ## Prerequisites
 Host machine with jackd2 oder jackd1 and Docker >= 18.x installed, I recommend jackd2.
 
+## Setup
 Allow X Window requests:
 ```bash
 # xhost local:root
-```
-Run Jack on your preferred soundcard and add a slave: 
-```bash
-$ jack_netsource -H 127.0.0.1 -N Docker1
 ```
 Run the container:
 ```bash
 # docker run -d --network host --privileged=true --cap-add=ALL --ulimit rtprio=99 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --name stereotool stereotool
 ```
+or, once created, just start the container:
+```bash
+# docker start stereotool
+```
+
+The container keeps waiting until a JACK master appears and the slave connection is started (see below)
+
+Run Jack on your preferred soundcard and add a slave: 
+```bash
+$ jack_netsource -H 127.0.0.1 -N Docker1
+```
+
