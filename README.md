@@ -17,7 +17,7 @@ Allow X Window requests:
 ```
 Run the container:
 ```bash
-# docker run -d --network host --privileged=true --cap-add=ALL --ulimit rtprio=99 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --name stereotool stereotool
+# docker run -d --network host -e "JACKPORT=3000" --privileged=true --cap-add=ALL --ulimit rtprio=99 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --name stereotool stereotool
 ```
 or, once created, just start the container:
 ```bash
@@ -28,7 +28,10 @@ The container keeps waiting until a JACK master appears and the slave connection
 
 Run Jack on your preferred soundcard and add a slave: 
 ```bash
-$ jack_netsource -H 127.0.0.1 -N Docker1
+$ jack_netsource -H 127.0.0.1 -p 3000 -N Docker1
 ```
-## TODO
-Use environment variable to specify JACK port in container.
+## Multiple instances
+On each instance, change the JACKPORT environment variable to a unique and free port number. Use the same port number when setting up the slave with jack_netsource. Don't forget to supply a unique name to jack_netsource, too.
+
+## Known issues
+Sometimes the GUI won't show up. Restart the container if this happens.
