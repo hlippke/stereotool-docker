@@ -1,7 +1,7 @@
 # stereotool-docker
 Running Stereotool in a Docker container.
 
-Find the ready-to-run container at https://hub.docker.com/r/hlippke/stereotool/
+Find the ready-to-run container at https://hub.docker.com/r/hlippke/stereotool-docker/
 
 Stereotool is a shareware broadcast audio processor running on your PC. Visit www.stereotool.com for more information. 
 
